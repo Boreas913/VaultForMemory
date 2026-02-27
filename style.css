@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   padding: 0;
@@ -18,7 +19,7 @@ body {
 .top div{
     padding: 2rem;
 }
-button{
+.button{
     border-width: 0;
     margin: .5rem;
     padding: .5rem;
@@ -27,6 +28,7 @@ button{
     font-family: 'Times New Roman', Times, serif;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     font-size: 1rem;
+    text-decoration: none;
 }
 header {
   height: 200vh;
@@ -50,7 +52,7 @@ p, h2, li {
 
 }
 .container {
-  clip-path: inset(0 0 0 0); /*magic*/
+  clip-path: inset(0 0 0 0); 
   overflow: hidden;
   position: absolute;
   height: 100vh;
@@ -89,10 +91,11 @@ p, h2, li {
   font-size: 2rem;
 }
 
-@media (max-width: 600px) {
-  .title_wrapper h1 {
-    font-size: 3rem;
-  }
+video {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%; 
+  height: auto;
 }
 
 /*"Family photos" that has image as color filled text and solid background*/
@@ -100,7 +103,7 @@ p, h2, li {
   background: url(https://images.pexels.com/photos/1477836/pexels-photo-1477836.jpeg?_gl=1*1wofxan*_ga*NjQ4ODI5NDI1LjE3NTgwNDk2NjI.*_ga_8JE65Q40S6*czE3NzEyODYwOTgkbzgkZzEkdDE3NzEyODYyMDUkajQxJGwwJGgw);
   background-size: 100vw auto;
   background-position: center;
-  -webkit-text-fill-color: transparent;/*magic*/
+  -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
   color: var(--blue);
@@ -109,11 +112,13 @@ p, h2, li {
 /*"Family photos" with background*/
 .container_image {
   background-image: url(https://images.pexels.com/photos/1477836/pexels-photo-1477836.jpeg?_gl=1*1wofxan*_ga*NjQ4ODI5NDI1LjE3NTgwNDk2NjI.*_ga_8JE65Q40S6*czE3NzEyODYwOTgkbzgkZzEkdDE3NzEyODYyMDUkajQxJGwwJGgw);
-  /*fix the mobile version of photo*/
-  background-size:100vw auto;
+  background-repeat: no-repeat;
+  background-size:cover;
   background-position: center;
   background-attachment: fixed;
   top: 100vh;
+  width: 100%;
+  height: 100vh;
 }
 
 .container_image .title_wrapper h1 {
@@ -139,7 +144,7 @@ p, h2, li {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
-    box-sizing: border-box; /* Crucial for width */
+    box-sizing: border-box;
 }
 
 .contact-card button {
@@ -155,6 +160,24 @@ p, h2, li {
 }
 .lookFamiliar img{
   height: 30rem;
+}
+@media (max-width: 600px) {
+  .lookFamiliar {
+    display: flex;
+    flex-wrap: wrap;       
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column; 
+    align-items: center;    
+  }
+  
+  .lookFamiliar img {
+    width: 100%;           
+    max-width: 500px;      
+    height: auto;          
+    object-fit: cover;
+    height: auto;           
+  }
 }
 .whoThisisFor ul {
   column-count: 2;    
@@ -214,7 +237,107 @@ p, h2, li {
     height: 6vmin;
 	min-height: 5em;
 	background: linear-gradient(#929292, transparent, #908f8f), 
-		var(--img) 50%/ cover;/*magic*/
+		var(--img) 50%/ cover;
 	background-attachment: fixed;
 	--img: url(https://images.pexels.com/photos/1477836/pexels-photo-1477836.jpeg?_gl=1*1wofxan*_ga*NjQ4ODI5NDI1LjE3NTgwNDk2NjI.*_ga_8JE65Q40S6*czE3NzEyODYwOTgkbzgkZzEkdDE3NzEyODYyMDUkajQxJGwwJGgw)
+}
+
+@media (max-width: 600px) {
+  .title_wrapper h1 {
+    font-size: 3rem;
+  }
+  html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  }
+  .contact-card{
+    width: 90%;
+    margin: 0;
+  }
+  .content{
+    padding: 0;
+    margin: .5rem;
+  }
+  .content h2{
+    font-size: 2rem;
+    margin: 0;
+  }
+  .top {
+    flex-direction: column; 
+    height: auto;            
+    padding: 15px 10px;        
+    gap: 10px;               
+  }
+
+  .top div {
+    padding: 0;  
+    display: flex;
+    gap: 8px;     
+  }
+  .top h2{
+    margin:0;
+  }
+
+  .button {
+    font-size: 0.85rem;      
+    margin: 0;         
+    padding: 10px 15px;       
+    white-space: nowrap; 
+  }
+  .whoThisisFor ul {
+    column-count: 2;    
+    column-gap: 40px;   
+    list-style-position: inside;
+    padding: 0; 
+    column-count: 1;
+    margin: 1rem;
+  }
+  .content p, .content li {
+    font-size: 1.1rem;
+    margin: .3rem;
+  }
+  .grid-container {
+    display: flex;
+    flex-wrap: wrap;   
+    gap: 20px; 
+    justify-content: center;
+  }
+
+  .step {
+    flex: 1 1 300px;      
+    max-width: 100%;       
+    text-align: center;
+    margin-bottom: 2rem;   
+  }
+
+  .step img {
+      width: 100%;
+      max-width: 350px;      
+      height: auto;
+      margin: 0 auto;        
+  }
+  .footer {
+    flex-direction: column;    
+    text-align: center;        
+    gap: 15px;                
+    margin: 1rem 0;     
+  }
+
+  .footer p{
+    font-size: 1rem;           
+    margin:0;     
+  }
+  .footer h2{
+    margin:.5rem;
+  }
+
+  .icons {
+    justify-content: center;   
+    width: 100%;
+  }
+  img{
+    max-height: 15rem;
+  }
 }
