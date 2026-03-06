@@ -1,8 +1,14 @@
+:root {
+  --accent-color: #c45104;
+  --text-color: #333;
+  --base-color:rgb(243, 235, 222);
+  --font: Arial, Helvetica, sans-serif;
+}
 
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(211, 192, 179);
+  background-color:var(--base-color);
 }
 .top {
   position: fixed;
@@ -10,7 +16,7 @@ body {
   width: 100%;
   height: 5rem;
   z-index: 1000;
-  background-color: rgb(211, 192, 179);
+  background-color: var(--base-color);
   display: flex;
   justify-content: space-between;
   align-items: center;            
@@ -23,20 +29,29 @@ body {
     border-width: 0;
     margin: .5rem;
     padding: .5rem;
-    color: rgb(255, 255, 255);
-    background-color: rgb(189, 154, 153);
-    font-family: 'Times New Roman', Times, serif;
+    color: var(--base-color);
+    background-color: var(--accent-color);
+    font-family: var(--font);
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     font-size: 1rem;
     text-decoration: none;
 }
 header {
-  height: 200vh;
+  /* height: 200vh; */
+  justify-content: center;
 }
 p, h2, li { 
-  color: rgb(255, 255, 255);
+  color: var(--text-color);
   margin: 2rem;
   min-height: 1rem;
+  font-family: var(--font);
+}
+
+form h2{
+    color: var(--base-color);
+}
+input, textarea {
+  background-color: var(--base-color);
 }
 .content h2{
   display: flex;
@@ -47,11 +62,21 @@ p, h2, li {
     font-size: 1.5rem;
 }
 .content, .footer{
-    color:rgb(255, 255, 255);
+    color:var(--text-color);
     margin: 2rem;
 
 }
-.container {
+h1{
+  color: var(--accent-color);
+  font-family: var(--font);
+  font-size: 5rem;
+}
+.title_wrapper{
+  margin: 1rem;
+  margin-top: 10rem;
+  text-align: center;
+}
+/* .container {
   clip-path: inset(0 0 0 0); 
   overflow: hidden;
   position: absolute;
@@ -63,13 +88,13 @@ p, h2, li {
 .container_solid {
   background: var(--blue);
   top: 0;
-}
+} */
 
-.title_wrapper {
+/* .title_wrapper {
   position: fixed;
   display: block;  
   margin: auto;
-  color: rgb(255, 255, 255);
+  color: var(--base-color);
   width: 100%;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -79,39 +104,39 @@ p, h2, li {
 
 .title_wrapper h1 {
   text-align: center;
-  font-size: 5.5rem;
+  font-size: 5rem;
   text-transform: uppercase;
   text-align: center;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: var(--font);
   font-weight: 900;
 }
 .title_wrapper h2{
   text-align: center;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: var(--font);
   font-size: 2rem;
-}
+} */
 
-video {
+/* video {
   display: block;
   margin: 0 auto;
   max-width: 100%; 
   height: auto;
-}
+} */
 
-/*"Family photos" that has image as color filled text and solid background*/
+/* "Family photos" that has image as color filled text and solid background
 .container_solid .title_wrapper h1 {
-  background: url(https://images.pexels.com/photos/1477836/pexels-photo-1477836.jpeg?_gl=1*1wofxan*_ga*NjQ4ODI5NDI1LjE3NTgwNDk2NjI.*_ga_8JE65Q40S6*czE3NzEyODYwOTgkbzgkZzEkdDE3NzEyODYyMDUkajQxJGwwJGgw);
+  background: rgb(204, 85, 0);
   background-size: 100vw auto;
   background-position: center;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
   color: var(--blue);
-}
+} */
 
-/*"Family photos" with background*/
+/* "Family photos" with background
 .container_image {
-  background-image: url(https://images.pexels.com/photos/1477836/pexels-photo-1477836.jpeg?_gl=1*1wofxan*_ga*NjQ4ODI5NDI1LjE3NTgwNDk2NjI.*_ga_8JE65Q40S6*czE3NzEyODYwOTgkbzgkZzEkdDE3NzEyODYyMDUkajQxJGwwJGgw);
+  background: rgb(204, 85, 0);
   background-repeat: no-repeat;
   background-size:cover;
   background-position: center;
@@ -119,13 +144,13 @@ video {
   top: 100vh;
   width: 100%;
   height: 100vh;
-}
+} */
 
-.container_image .title_wrapper h1 {
-  color: var(--blue);
-}
+/* .container_image .title_wrapper h1 {
+  color: var(--base-color);
+} */
 .contact-card {
-    background:rgb(189, 154, 153);
+    background:var(--text-color);
     padding: 25px;
     border: 0;
     max-width: 400px;
@@ -148,8 +173,8 @@ video {
 }
 
 .contact-card button {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--accent-color);
+    color: var(--base-color);
     border: none;
     padding: 12px;
     cursor: pointer;
@@ -239,7 +264,7 @@ video {
 	background: linear-gradient(#929292, transparent, #908f8f), 
 		var(--img) 50%/ cover;
 	background-attachment: fixed;
-	--img: url(https://images.pexels.com/photos/1477836/pexels-photo-1477836.jpeg?_gl=1*1wofxan*_ga*NjQ4ODI5NDI1LjE3NTgwNDk2NjI.*_ga_8JE65Q40S6*czE3NzEyODYwOTgkbzgkZzEkdDE3NzEyODYyMDUkajQxJGwwJGgw)
+	--img: var(--accent-color);
 }
 
 @media (max-width: 600px) {
